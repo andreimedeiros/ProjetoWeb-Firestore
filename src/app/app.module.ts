@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FirestoreModule } from './firestore/firestore.module';
 
 
 
@@ -33,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     UsersModule,
     GamesModule,
     InterfaceModule,
-    HttpClientModule
+    HttpClientModule,
+    FirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

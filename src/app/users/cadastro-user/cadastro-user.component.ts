@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import User from 'src/app/shared/model/user';
+import { UserFirestoreService } from 'src/app/shared/services/firestore/user/user-firestore.service';
 import { UserService } from 'src/app/shared/services/user/user.service';
 
 
@@ -16,8 +17,8 @@ export class CadastroUserComponent implements OnInit {
   
 
 
-  constructor(private userService: UserService) { 
-    this.user = new User('',0,'');
+  constructor(private userService: UserFirestoreService) { 
+    this.user = new User('','',0,'');
     // this.users =  userService.listar()
 
   }
@@ -31,7 +32,7 @@ export class CadastroUserComponent implements OnInit {
     this.userService.inserir(this.user).subscribe(
       userobs => console.log(userobs)
     )
-    this.user = new User('',0,'');
+    this.user = new User('','',0,'');
   }
 
 }

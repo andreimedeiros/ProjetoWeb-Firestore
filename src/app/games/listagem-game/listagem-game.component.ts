@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Game } from 'src/app/shared/model/game';
+import { GameFirestoreService } from 'src/app/shared/services/firestore/game/game-firestore.service';
 import { GameService } from 'src/app/shared/services/game/game.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ListagemGameComponent implements OnInit {
 
   games: Game[] ;
 
-  constructor(private gameService: GameService, private roteador: Router) {
+  constructor(private gameService: GameFirestoreService, private roteador: Router) {
     this.games = new Array<Game>;
   }
   

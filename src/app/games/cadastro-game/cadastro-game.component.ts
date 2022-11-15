@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/shared/model/game';
+import { GameFirestoreService } from 'src/app/shared/services/firestore/game/game-firestore.service';
 import { GameService } from 'src/app/shared/services/game/game.service';
 
 
@@ -13,8 +14,8 @@ export class CadastroGameComponent implements OnInit {
   game: Game;
   // games: Array<Game>;
 
-  constructor(private gameService: GameService) { 
-    this.game = new Game(0,'','');
+  constructor(private gameService: GameFirestoreService) { 
+    this.game = new Game('','','');
     // this.games = gameService.listar();
   }
 
@@ -28,7 +29,7 @@ export class CadastroGameComponent implements OnInit {
     this.gameService.inserir(this.game).subscribe(
       jogoobs => console.log(jogoobs)
     )
-    this.game = new Game(0,'','');
+    this.game = new Game('','','');
 
   }
 }
